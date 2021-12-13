@@ -4,6 +4,10 @@ metadata:
   name: cap-orders-service 
   labels:
     app: cap-orders-service
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: cap-orders-service
+    meta.helm.sh/release-namespace: cap
 spec:
   replicas: 1
   selector:
@@ -31,6 +35,10 @@ metadata:
   name: cap-orders-service
   labels:
     app: cap-orders-service
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: cap-orders-service
+    meta.helm.sh/release-namespace: cap
 spec:
   ports:
   - name: http
@@ -43,6 +51,11 @@ apiVersion: gateway.kyma-project.io/v1alpha1
 kind: APIRule
 metadata:
   name: cap-orders-service
+  labels:
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: cap-orders-service
+    meta.helm.sh/release-namespace: cap
 spec:
   gateway: kyma-gateway.kyma-system.svc.cluster.local
   rules:
